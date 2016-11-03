@@ -35,7 +35,8 @@ a {
     padding: 0;
     width: 100%;
     z-index: 100;
-    background-color: #e2dcc5;
+    /*background-color: #e2dcc5;*/
+    background-color:#c0dcf1;
     -webkit-box-shadow: 0 1px 3px #999;
     /* Shadow here on FF causes scroll bars */
     overflow: hidden;
@@ -75,7 +76,8 @@ a {
 .BRpagediv1up {
     overflow: hidden;
     cursor: move;
-    background-color: #FEFDEB;
+    /*background-color: #FEFDEB;*/
+    background-color: #FFF;
     -webkit-box-shadow: 1px 1px 2px #333;
     -moz-box-shadow: 1px 1px 2px #333;
     box-shadow: 1px 1px 2px #333;

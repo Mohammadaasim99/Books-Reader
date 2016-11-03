@@ -517,7 +517,7 @@ function BookReader() {
                 $(div).css('left', left + 'px');
                 $(div).css('width', width + 'px');
                 $(div).css('height', height + 'px');
-                //$(div).text('loading...');
+                $(div).text('loading...');
 
                 $('#BRpageview').append(div);
 
