@@ -1,8 +1,29 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #2B2B2B;
 }
 
 a {
   color: #00B7FF;
+}
+.square{
+  height: 250px;
+  background: lightblue;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.book_row
+{
+  margin: 3px auto;
+}
+.book_slider
+{
+  height: 350px;
+  background-color: #FD5E3F;
+}
+footer{
+  height: 65px;
+  background-color: #FD5E3F;
 }
