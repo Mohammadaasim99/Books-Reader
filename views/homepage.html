@@ -11,6 +11,7 @@
     <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/stylesheets/style.css" rel="stylesheet" type="text/css"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+    <link href="/stylesheets/ihover.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,29 +22,360 @@
     <style>
       .glyphicon .glyphicon-book{
         font-size: 40px;
+        color: #f2f2f2;
       }
+      .row {
+        margin-top:10px;
+        margin-bottom: 5px
+      }
+      /*--------------------------------------------------------------------------------------------------------------------------------------------------------*/
+      #wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background: #000;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#wrapper.active {
+  padding-left: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 0;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+
+.sidebar-nav li a {
+  color: #999999;
+  display: block;
+  text-decoration: none;
+  padding-left: 60px;
+}
+
+.sidebar-nav li a span:before {
+  position: absolute;
+  left: 0;
+  color: #41484c;
+  text-align: center;
+  width: 20px;
+  line-height: 18px;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li.active {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+
+
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+#menu-toggle {
+    text-decoration: none;
+}
+
+.btn-menu {
+  color: #000;
+}
+
+.inset {
+  padding: 20px;
+}
+
+@media (max-width:767px) {
+
+#wrapper {
+  padding-left: 0;
+}
+
+#sidebar-wrapper {
+  left: 0;
+}
+
+#wrapper.active {
+  position: relative;
+  left: 250px;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 250px;
+  width: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#menu-toggle {
+  display: inline-block;
+}
+
+.inset {
+  padding: 15px;
+}
+
+}
+
     </style>
+
   </head>
   <body>
     <!-- Start of Container -->
 
     <div class="container-fluid">
-      <div class="row" style="background-color:#ffffff">
-      <div style="padding:9px;background-color:lightblue" class="col-md-2 col-lg-2">
-          <h1 ><span class="glyphicon glyphicon-book" style="  font-size: 40px; color:#666666;"> </span> Bal-e-Jibrael</h1>
-      </div>
-      <div class="col-md-1 col-lg-1 pull-right" style="background-color:lightblue">
-        <div class="glyphicon glyphicon-align-justify">
+      <div id="wrapper">
 
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+          <nav id="spy">
+              <ul class="sidebar-nav nav">
+                  <li class="sidebar-brand">
+                      <a href="#home"><span class="fa fa-home solo">Home</span></a>
+                  </li>
+                  <li>
+                      <a href="#anch1" data-scroll>
+                          <span class="fa fa-anchor solo">Anchor 1</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#anch2" data-scroll>
+                          <span class="fa fa-anchor solo">Anchor 2</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#anch3" data-scroll>
+                          <span class="fa fa-anchor solo">Anchor 3</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#anch4" data-scroll>
+                          <span class="fa fa-anchor solo">Anchor 4</span>
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+      <div class="row" style="">
+        <div class="content-header">
+                <h1 id="home">
+                    <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </h1>
+            </div>
+    <!--  <div style="padding:9px;" class="col-md-2 col-lg-2">
+          <h1 ><span class="glyphicon glyphicon-book" style="  font-size: 40px; color:#666666;"> </span> Bal-e-Jibrael</h1>
+      </div> -->
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-12 col-sx-12 col-md-offset-3 col-lg-offset-3" style="">
+          <!-- Start of first row -->
+          <div class="row">
+            <div class="col-sm-6 col-sx-12 col-md-4 col-lg-4 ">
+              <!-- normal -->
+              <div class="ih-item circle effect13 from_left_and_right"><a href="#">
+                  <div class="img"><img src="images/assets/1.jpg" alt="img"></div>
+                  <div class="info">
+                    <div class="info-back">
+                      <h3>Heading here</h3>
+                      <p>Description goes here</p>
+                    </div>
+                  </div></a></div>
+              <!-- end normal -->
+
+            </div>
+            <div class="col-sm-6 col-sx-12 col-md-4 col-lg-4 ">
+
+              <!-- colored -->
+              <div class="ih-item circle colored effect13 from_left_and_right"><a href="#">
+                  <div class="img"><img src="images/assets/2.jpg" alt="img"></div>
+                  <div class="info">
+                    <div class="info-back">
+                      <h3>Heading here</h3>
+                      <p>Description goes here</p>
+                    </div>
+                  </div></a></div>
+              <!-- end colored -->
+
+            </div>
+            <div class="col-sm-6 col-sx-12 col-md-4 col-lg-4 ">
+
+              <!-- colored -->
+              <div class="ih-item circle colored effect13 from_left_and_right"><a href="#">
+                  <div class="img"><img src="images/assets/3.jpg" alt="img"></div>
+                  <div class="info">
+                    <div class="info-back">
+                      <h3>Heading here</h3>
+                      <p>Description goes here</p>
+                    </div>
+                  </div></a></div>
+              <!-- end colored -->
+
+            </div>
+          </div>
+          <!-- End of First row -->
+            <!-- start of Second row -->
+          <div class="row">
+
+            <div class="col-sm-6 col-sx-12 col-md-4 col-lg-4 ">
+
+              <!-- normal -->
+              <div class="ih-item circle effect13 from_left_and_right"><a href="#">
+                  <div class="img"><img src="images/assets/4.jpg" alt="img"></div>
+                  <div class="info">
+                    <div class="info-back">
+                      <h3>Heading here</h3>
+                      <p>Description goes here</p>
+                    </div>
+                  </div></a></div>
+              <!-- end normal -->
+
+            </div>
+            <div class="col-sm-6 col-sx-12 col-md-4 col-lg-4 ">
+
+              <!-- colored -->
+              <div class="ih-item circle colored effect13 from_left_and_right"><a href="#">
+                  <div class="img"><img src="images/assets/5.jpg" alt="img"></div>
+                  <div class="info">
+                    <div class="info-back">
+                      <h3>Heading here</h3>
+                      <p>Description goes here</p>
+                    </div>
+                  </div></a></div>
+              <!-- end colored -->
+
+            </div>
+            <div class="col-sm-6 col-sx-12 col-md-4 col-lg-4 ">
+
+              <!-- colored -->
+              <div class="ih-item circle colored effect13 from_left_and_right"><a href="#">
+                  <div class="img"><img src="images/assets/6.jpg" alt="img"></div>
+                  <div class="info">
+                    <div class="info-back">
+                      <h3>Heading here</h3>
+                      <p>Description goes here</p>
+                    </div>
+                  </div></a></div>
+              <!-- end colored -->
+
+            </div>
+          </div>
+          <!-- End of second row -->
+          <!-- Start of third row -->
+          <div class="row">
+            <div class="col-sm-6 col-sx-12 col-md-4 col-lg-4 col-centered">
+              <!-- normal -->
+              <div class="ih-item circle effect13 from_left_and_right"><a href="#">
+                  <div class="img"><img src="images/assets/7.jpg" alt="img"></div>
+                  <div class="info">
+                    <div class="info-back">
+                      <h3>Heading here</h3>
+                      <p>Description goes here</p>
+                    </div>
+                  </div></a></div>
+              <!-- end normal -->
+
+            </div>
+          </div>
+          <!-- End of third row -->
         </div>
       </div>
+      <div class="row">
+        <div class="col-sx-12 col-sm-12 col-md-12 col-lg-12">
+          <footer style="height:50px"></footer>
+        </div>
       </div>
     </div>
     <!-- End of Container -->
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    /*Menu-toggle*/
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("active");
+  });
+
+  /*Scroll Spy*/
+  $('body').scrollspy({ target: '#spy', offset:80});
+
+  /*Smooth link animation*/
+  $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+              $('html,body').animate({
+                  scrollTop: target.offset().top
+              }, 1000);
+              return false;
+          }
+      }
+  });
+    </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://gudh.github.io/ihover/dist/scripts/app.js"></script>
     <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   </body>
 </html>
