@@ -80,7 +80,7 @@ function BookReader() {
     this.lastDisplayableIndex2up = null;
 
     // Should be overriden (before init) by custom implmentations.
-    this.logoURL = 'https://www.ahmedimam.info';
+    this.logoURL = '/';
 
     // Base URL for UI images - should be overriden (before init) by
     // custom implementations.
@@ -517,7 +517,7 @@ function BookReader() {
                 $(div).css('left', left + 'px');
                 $(div).css('width', width + 'px');
                 $(div).css('height', height + 'px');
-                $(div).text('loading...');
+                //$(div).text('loading...');
 
                 $('#BRpageview').append(div);
 

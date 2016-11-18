@@ -15,6 +15,9 @@ br.getPageWidth = function(index) {
 br.getPageHeight = function(index) {
     return 1200;
 }
+// copy the book name from the URL --Aasim
+var bookName=window.location.search.replace("?","").split('&')[0];
+var totalPages=window.location.search.replace("?","").split('&')[1];
 
 // We load the images from archive.org -- you can modify this function to retrieve images
 // using a different URL structure
@@ -30,7 +33,7 @@ br.getPageURI = function(index, reduce, rotate) {
     var imgStr = (index + 1).toString();
     var re = new RegExp("0{" + imgStr.length + "}$");
     //var url = 'http://www.archive.org/download/BookReader/img/page' + leafStr.replace(re, imgStr) + '.jpg';
-    var url = '/images/' + leafStr.replace(re, imgStr) + '.png';
+    var url = '/images/'+bookName+'/' + leafStr.replace(re, imgStr) + '.png';
     return url;
 }
 
@@ -82,11 +85,11 @@ br.getPageNum = function(index) {
 }
 
 // Total number of leafs
-br.numLeafs = 118;
+br.numLeafs = parseInt(totalPages);
 
 // Book title and the URL used for the book title link
 br.bookTitle = 'From Ahmed Imam collection';
-br.bookUrl = 'http://ahmdImam.info';
+br.bookUrl = '/';
 
 // Override the path used to find UI images
 br.imagesBaseURL = '../public/images/default/images/';
